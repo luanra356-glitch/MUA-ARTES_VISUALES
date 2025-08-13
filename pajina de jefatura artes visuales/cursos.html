@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Jefatura Artes Visuales</title>
+  <link rel="stylesheet" href="cursos.css" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>Artes Visuales</h2>
+    <nav>
+      <a href="#" data-section="institucion" class="active">Página de la institución</a>
+      <a href="#" data-section="actividad">Actividad</a>
+      <a href="#" data-section="cursos">Cursos</a>
+      <a href="#" data-section="organizaciones">Organizaciones</a>
+      <a href="#" data-section="calendario">Calendario</a>
+      <a href="#" data-section="mensajes">Mensajes</a>
+      <a href="#" data-section="calificaciones">Calificaciones</a>
+      <a href="#" data-section="herramientas">Herramientas</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Cerrar sesión</button>
+  </aside>
+
+  <main class="main-content">
+    <section id="institucion" class="active">
+      <h1>Página de la institución</h1>
+      <p>Bienvenido a la página principal de la institución de Artes Visuales.</p>
+    </section>
+
+    <section id="actividad">
+      <h1>Actividad</h1>
+      <p>Aquí puedes ver las actividades recientes y novedades.</p>
+    </section>
+
+    <section id="cursos">
+      <h1>Cursos</h1>
+
+      <!-- Barra de filtros -->
+      <div class="course-header">
+        <input type="search" id="searchCourses" placeholder="Busque sus cursos" />
+
+        <select id="typeFilter">
+          <option value="todos">Todos los cursos</option>
+          <option value="pintura">Pintura</option>
+          <option value="escultura">Escultura</option>
+        </select>
+
+        <select id="cycleFilter">
+          <option value="todos">Todos los ciclos</option>
+          <option value="II">II Ciclo</option>
+          <option value="IV">IV Ciclo</option>
+          <option value="VI">VI Ciclo</option>
+          <option value="VIII">VIII Ciclo</option>
+          <option value="X">X Ciclo</option>
+        </select>
+      </div>
+
+      <ul class="course-list">
+
+        <!-- Ejemplo de Pintura II Ciclo -->
+       
+       
+       <!-- ESCULTURA II -->
+        <li class="course-item escultura ciclo-II"><div class="course-title">Pensamiento Crítico y Argumentación</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Historia del Arte II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Filosofía del Arte</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Dibujo II</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Escultura II</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Fundamentos Visuales II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Dibujo Geométrico</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-II"><div class="course-title">Pintura II</div><div class="course-professor">Profesor: PINTURA</div></li>
+
+           <!-- PINTURA VIII -->
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Historia del Arte VIII</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Psicología del Arte</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Investigación Artística IV</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Dibujo VIII</div><div class="course-professor">Profesor: PINTURA</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Pintura VIII</div><div class="course-professor">Profesor: PINTURA</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Conservación y Restauración I</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Arte Popular II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Grabado II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-VIII"><div class="course-title">Proyectos Artísticos Interdisciplinarios II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+
+        <!-- PINTURA X -->
+        <li class="course-item pintura ciclo-X"><div class="course-title">Emprendimiento Cultural y Artístico II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-X"><div class="course-title">Proyecto de Titulación II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-X"><div class="course-title">Taller de Titulación II</div><div class="course-professor">Profesor: PINTURA</div></li>
+        <li class="course-item pintura ciclo-X"><div class="course-title">Conservación y Restauración III</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-X"><div class="course-title">Ilustración I</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item pintura ciclo-X"><div class="course-title">Proyectos Artísticos Interdisciplinarios IV</div><div class="course-professor">Profesor: PINT/ESCU</div></li> 
+        <!-- Aquí seguirías listando TODOS los cursos clasificados con su tipo y ciclo -->
+          <!-- ESCULTURA IV -->
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Historia del Arte IV</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Antropología del Arte</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Técnicas Artísticas I</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Dibujo IV</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Escultura IV</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Fundamentos Visuales IV</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-IV"><div class="course-title">Anatomía Artística II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+
+        <!-- ESCULTURA VI -->
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Historia del Arte VII</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Técnicas Artísticas III</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Investigación Artística II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Dibujo VII</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Escultura VII</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Fotografía II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VI"><div class="course-title">Producción Gráfica Digital II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+
+        <!-- ESCULTURA VIII -->
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Historia del Arte VIII</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Psicología del Arte</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Investigación Artística IV</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Dibujo VIII</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Escultura VIII</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Conservación y Restauración I</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Arte Popular II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Grabado II</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-VIII"><div class="course-title">Proyecto Artístico Interdisciplinario II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+
+        <!-- ESCULTURA X -->
+        <li class="course-item escultura ciclo-X"><div class="course-title">Emprendimiento Cultural y Artístico II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-X"><div class="course-title">Proyecto de Titulación II</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-X"><div class="course-title">Taller de Titulación II</div><div class="course-professor">Profesor: ESCULTURA</div></li>
+        <li class="course-item escultura ciclo-X"><div class="course-title">Conservación y Restauración III</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-X"><div class="course-title">Ilustración I</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+        <li class="course-item escultura ciclo-X"><div class="course-title">Proyectos Artísticos Interdisciplinarios IV</div><div class="course-professor">Profesor: PINT/ESCU</div></li>
+      </ul>
+    </section>
+
+    <section id="organizaciones">
+      <h1>Organizaciones</h1>
+      <p>Gestión y lista de organizaciones vinculadas.</p>
+    </section>
+
+    <section id="calendario">
+      <h1>Calendario</h1>
+      <p>Visualiza y administra el calendario de eventos.</p>
+    </section>
+
+    <section id="mensajes">
+      <h1>Mensajes</h1>
+      <p>Revisa y envía mensajes internos.</p>
+    </section>
+
+    <section id="calificaciones">
+      <h1>Calificaciones</h1>
+      <p>Consulta y gestiona las calificaciones.</p>
+    </section>
+
+    <section id="herramientas">
+      <h1>Herramientas</h1>
+      <p>Accede a las herramientas disponibles para la gestión.</p>
+    </section>
+  </main>
+
+  <script>
+    const navLinks = document.querySelectorAll('.sidebar nav a');
+    const sections = document.querySelectorAll('main section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(link.dataset.section).classList.add('active');
+      });
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      alert('Sesión cerrada');
+      location.reload();
+    });
+
+    // Filtro de búsqueda y selectores
+    const searchInput = document.getElementById('searchCourses');
+    const typeFilter = document.getElementById('typeFilter');
+    const cycleFilter = document.getElementById('cycleFilter');
+    const courses = document.querySelectorAll('.course-item');
+
+    function filterCourses() {
+      const searchValue = searchInput.value.toLowerCase();
+      const typeValue = typeFilter.value;
+      const cycleValue = cycleFilter.value;
+
+      courses.forEach(course => {
+        const matchesSearch = course.querySelector('.course-title').textContent.toLowerCase().includes(searchValue);
+        const matchesType = (typeValue === 'todos') || course.classList.contains(typeValue);
+        const matchesCycle = (cycleValue === 'todos') || course.classList.contains(`ciclo-${cycleValue}`);
+
+        if (matchesSearch && matchesType && matchesCycle) {
+          course.style.display = '';
+        } else {
+          course.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterCourses);
+    typeFilter.addEventListener('change', filterCourses);
+    cycleFilter.addEventListener('change', filterCourses);
+  </script>
+</body>
+</html>

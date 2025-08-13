@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Jefatura Artes Visuales</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 20px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .sidebar nav a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border-left: 5px solid transparent;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #004080;
+      color: #fff;
+      border-left-color: #ffcc00;
+    }
+
+    .sidebar nav a svg {
+      margin-right: 10px;
+    }
+
+    /* Main content */
+    .main-content {
+      flex-grow: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .main-content h1 {
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    /* Sections */
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    /* Example styles for courses */
+    .course-list {
+      list-style: none;
+    }
+
+    .course-list li {
+      background: white;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-left: 6px solid #004080;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .course-list li:hover {
+      background-color: #e0e7f3;
+    }
+
+    /* Logout button */
+    .logout-btn {
+      margin-top: auto;
+      padding: 15px 20px;
+      background-color: #d61919;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #a31212;
+    }
+
+    /* Scrollbar for main content */
+    .main-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    .main-content::-webkit-scrollbar-thumb {
+      background-color: #004080;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>Artes Visuales</h2>
+    <nav>
+      <a href="#" data-section="institucion" class="active">Página de la institución</a>
+      <a href="#" data-section="actividad">Actividad</a>
+      <a href="#" data-section="cursos">Cursos</a>
+      <a href="#" data-section="organizaciones">Organizaciones</a>
+      <a href="#" data-section="calendario">Calendario</a>
+      <a href="#" data-section="mensajes">Mensajes</a>
+      <a href="#" data-section="calificaciones">Calificaciones</a>
+      <a href="#" data-section="herramientas">Herramientas</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Cerrar sesión</button>
+  </aside>
+
+  <main class="main-content">
+    <section id="institucion" class="active">
+      <h1>Página de la institución</h1>
+      <p>Bienvenido a la página principal de la institución de Artes Visuales.</p>
+    </section>
+
+    <section id="actividad">
+      <h1>Actividad</h1>
+      <p>Aquí puedes ver las actividades recientes y novedades.</p>
+    </section>
+
+    <section id="cursos">
+      <h1>Cursos</h1>
+      <ul class="course-list">
+        <li>Diseño y desarrollo de aplicaciones móviles</li>
+        <li>Diseño y desarrollo de soluciones IoT</li>
+        <li>Revisión y calificación de cuadernos informe</li>
+        <li>Seminario de complementación práctica II</li>
+      </ul>
+    </section>
+
+    <section id="organizaciones">
+      <h1>Organizaciones</h1>
+      <p>Gestión y lista de organizaciones vinculadas.</p>
+    </section>
+
+    <section id="calendario">
+      <h1>Calendario</h1>
+      <p>Visualiza y administra el calendario de eventos.</p>
+    </section>
+
+    <section id="mensajes">
+      <h1>Mensajes</h1>
+      <p>Revisa y envía mensajes internos.</p>
+    </section>
+
+    <section id="calificaciones">
+      <h1>Calificaciones</h1>
+      <p>Consulta y gestiona las calificaciones.</p>
+    </section>
+
+    <section id="herramientas">
+      <h1>Herramientas</h1>
+      <p>Accede a las herramientas disponibles para la gestión.</p>
+    </section>
+  </main>
+
+  <script>
+    const navLinks = document.querySelectorAll('.sidebar nav a');
+    const sections = document.querySelectorAll('main section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Quitar active de todos links y secciones
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Agregar active al link y sección seleccionados
+        link.classList.add('active');
+        const targetSection = document.getElementById(link.dataset.section);
+        targetSection.classList.add('active');
+      });
+    });
+
+    // Cerrar sesión: solo ejemplo para refrescar la página o volver al login
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      alert('Sesión cerrada');
+      // Aquí redirigirías al login o recargar la página
+      location.reload();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Artes Visuales</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>Jefatura de Artes Visuales</h1>
+
+    <form id="loginForm">
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required />
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required />
+
+      <button type="submit" class="login-btn">Ingresar</button>
+    </form>
+
+    <div id="mensaje" class="mensaje-error"></div>
+  </div>
+
+  <script>
+    // Usuarios permitidos (usuario: contraseña)
+    const usuarios = {
+      admin: '1234',
+      profesor1: 'abcd',
+      administrativo: 'pass123'
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const usuario = document.getElementById('username').value.trim();
+      const contraseña = document.getElementById('password').value.trim();
+      const mensaje = document.getElementById('mensaje');
+
+      if (usuario === '' || contraseña === '') {
+        mensaje.style.color = 'red';
+        mensaje.textContent = 'Por favor, ingresa usuario y contraseña.';
+        return;
+      }
+
+      if (usuarios[usuario] && usuarios[usuario] === contraseña) {
+        mensaje.style.color = 'green';
+        mensaje.textContent = '¡Login exitoso! Redirigiendo...';
+
+        setTimeout(() => {
+          window.location.href = 'dashboard.html'; // Cambia a la página que quieras
+        }, 1500);
+      } else {
+        mensaje.style.color = 'red';
+        mensaje.textContent = 'Usuario o contraseña incorrectos.';
+      }
+    });
+  </script>
+
+</body>
+</html>
